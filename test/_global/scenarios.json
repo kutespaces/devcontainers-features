@@ -1,0 +1,14 @@
+{
+  "all-tools": {
+      "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+      "features": {
+          "asdf-package": {
+            "version": "latest",
+            "plugin": "act"
+          },
+          "k9s": {},
+          "k3d": {},
+          "kubectx-kubens": {}
+      }
+  }
+}
