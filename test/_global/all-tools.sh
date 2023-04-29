@@ -7,7 +7,7 @@ source dev-container-features-test-lib
 
 # Feature-specific tests
 # The 'check' command comes from the dev-container-features-test-lib.
-check "asdf list act" asdf list act
+check "asdf list kubectl" asdf list kubectl
 check "k9s" k9s version
 check "k3d" k3d version
 check "kubectx" kubectx --help
