@@ -57,9 +57,9 @@ find_version_from_git_tags() {
 	echo "${variable_name}=${!variable_name}"
 }
 
-find_version_from_git_tags KUBCTX_KUBENS_VERSION 'https://github.com/ahmetb/kubectx'
-
 check_packages ca-certificates curl git
+
+find_version_from_git_tags KUBCTX_KUBENS_VERSION 'https://github.com/ahmetb/kubectx'
 
 curl -L -o /usr/local/bin/kubectx https://raw.githubusercontent.com/ahmetb/kubectx/v${KUBCTX_KUBENS_VERSION}/kubectx &&
 	curl -L -o /usr/local/bin/kubens https://raw.githubusercontent.com/ahmetb/kubectx/v${KUBCTX_KUBENS_VERSION}/kubens &&
