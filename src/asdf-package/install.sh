@@ -88,7 +88,7 @@ EOF
 EOF
 	else
 		# asdf is not available to remote user, install it, then update rc files
-
+		env
 		su - "$_REMOTE_USER" <<EOF
 			git clone --depth=1 \
 				-c core.eol=lf \
@@ -97,7 +97,7 @@ EOF
 				-c fetch.fsck.zeroPaddedFilemode=ignore \
 				-c receive.fsck.zeroPaddedFilemode=ignore \
 				"https://github.com/asdf-vm/asdf.git" $_REMOTE_USER_HOME/.asdf 2>&1
-			
+
 			. $_REMOTE_USER_HOME/.asdf/asdf.sh
 			if asdf list "$PLUGIN" >/dev/null 2>&1; then
 				echo "$PLUGIN  already exists - skipping installation"
@@ -108,7 +108,7 @@ EOF
 			asdf global "$PLUGIN" "$VERSION"
 EOF
 		updaterc ". $_REMOTE_USER_HOME/.asdf/asdf.sh"
-	fi 
+	fi
 }
 
 install_via_asdf "$PLUGIN" "$VERSION" "$PLUGINREPO"
